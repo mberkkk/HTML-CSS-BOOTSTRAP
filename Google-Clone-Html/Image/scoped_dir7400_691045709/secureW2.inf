@@ -1,0 +1,85 @@
+;
+; SecureW2.inf -- SecureW2 Pre-Configuration File
+;
+; Manufacturer: SecureW2 B.V.
+;
+[Version]
+Signature = "$Windows NT$"
+Provider = "SecureW2"
+Config = 7
+;
+; Global configuration
+;
+; Startup wired zero config before installing
+; values: AUTO|DISABLED|START|STOP
+;[DOT3SVC]
+;Startup = AUTO
+; Startup wireless zero config before installing
+; values: AUTO|DISABLED|START|STOP
+[WZCSVC]
+Startup = AUTO
+[SSID.1]
+SSID = "eduroam"
+Name = "eduroam"
+Profile = "eduroam"
+AuthenticationMode = "WPA2"
+EncryptionType = "AES"
+
+
+;
+[Profile.1]
+Name = "eduroam"
+Description = "Lütfen mail adresinizi ve þifresini giriniz."
+;
+; Connection
+;
+;UseAlternateOuterIdentity= FALSE
+;UseAnonymousOuterIdentity = TRUE
+;AlternateOuterIdentity = kullaniciadiniz@trakya.edu.tr
+;UseSessionResumption = TRUE
+;
+; Certificates
+;
+VerifyServerCertificate = FALSE
+;VerifyServerName = TRUE
+;ServerName = somedomain.com
+;TrustedRootCA.0 = 3cdaba08113d934207b91d1c525683cc09bbc829
+;
+; Authentication
+;
+AuthenticationMethod = PAP
+
+;AltUsernameString = "Who are you:"
+;AltPasswordStr = "Enter your secret:"
+;AltRePasswordStr = "Re-Enter your secret:"
+;AltDomainStr = "Where are you from:"
+;AltCredsTitle = "Welcome to ..."
+;AltProfileStr = "Your profile is:"
+;
+; The following disables the "Save credentials" option in the popup
+;AllowCachePW = FALSE
+;
+; User Account
+;
+; To ask the user for credentials during startup use the following example:
+PromptUserForCredentials = FALSE
+UserName = PROMPTUSER
+;UserPassword = xxx
+;UserDomain = alfa-ariss.com
+;
+; The following saves the user credentials as computer credentials
+; allowing 802.1X authentication during startup
+; UseUserCredentialsForComputer = TRUE
+;
+; Advanced
+;
+;UseAlternateComputerCredentials = TRUE
+;ComputerName = admin
+;ComputerPassword = xxx
+;ComputerDomain = somedomain.com
+ServerCertificateOnLocalComputer = FALSE
+;CheckForMicrosoftExtension = TRUE
+AllowNewConnections = TRUE
+;UseMicrosoftCachedUserData = TRUE
+UseEmptyIdentity = FALSE
+;RenewIPAddress = TRUE
